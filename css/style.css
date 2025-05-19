@@ -1,0 +1,11 @@
+/* Шрифты */
+@import url('fonts.css');
+
+/* Сброс стилей */
+@import url('general.css');
+
+/* Общие стили */
+@import url('body.css');
+
+/* Адаптация */
+@import url('media.css');

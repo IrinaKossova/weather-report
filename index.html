@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода в Москве сегодня</title>
+    <meta name="description" content="Актуальная информация о погоде в Москве.">
+    <meta name="keywords" content="погода, Москва, сегодня, прогноз">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/logo.png">
+
+    <script src="./js/loading.js" defer></script>
+    <script src="./js/login.js" defer></script>
+    <script src="./js/weather.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="#!" class="header__logo" aria-label="На главную страницу">
+               <img src="./images/logo.png" aria-label="Логотип">
+                <span class="header__logo-text">Прогноз Погоды</span>
+            </a>
+        </header>
+
+        <main id="content" class="main">
+            <section id="loginFormContainer" class="login-form" aria-hidden="true">
+                <h2 class="login-form__title">Вход</h2>
+                <form id="loginForm" class="login-form__form" aria-label="Форма входа">
+                    <div class="login-form__group">
+                        <label for="username" class="login-form__label">Имя пользователя:</label>
+                        <input type="text" id="username" name="username" class="login-form__input" aria-required="true">
+                    </div>
+
+                    <div class="login-form__group">
+                        <label for="password" class="login-form__label">Пароль:</label>
+                        <input type="password" id="password" name="password" class="login-form__input"
+                            aria-required="true">
+                    </div>
+
+                    <button type="submit" class="login-form__submit" aria-label="Войти">Войти</button>
+                </form>
+                <div id="errorDiv" class="login-form__error" aria-live="polite"></div>
+            </section>
+
+        <section id="weatherContainer" class="weather-container">
+            <h1 class="weather-container__title">Погода в Москве сейчас</h1>
+            <div id="weatherData" class="weather-container__data">
+                <template id="weatherTemplate">
+                    <div class="weather-data">
+                        <div class="weather-data__temperature">
+                            <svg class="weather-data__icon">
+                                <use href="./images/sprite.svg#thermometer"></use>
+                            </svg>
+                            <span class="weather-data__value" data-weather-type="temperature"></span>
+                            Ощущается как:&nbsp;
+                            <span class="weather-data__value" data-weather-type="feelsLike"></span>
+                        </div>
+                        <div class="weather-data__humidity">
+                            <svg class="weather-data__icon">
+                                <use href="./images/sprite.svg#humidity"></use>
+                            </svg>
+                            Влажность:&nbsp;
+                            <span class="weather-data__value" data-weather-type="humidity"></span>
+                        </div>
+                        <div class="weather-data__condition">
+                            <svg class="weather-data__icon">
+                                <use href="./images/sprite.svg#weather"></use>
+                            </svg>
+                            На улице:&nbsp;
+                            <span class="weather-data__value" data-weather-type="description"></span>
+                        </div>
+                        <div class="weather-data__wind-speed">
+                            <svg class="weather-data__icon">
+                                <use href="./images/sprite.svg#wind"></use>
+                            </svg>
+                            Скорость ветра:&nbsp;
+                            <span class="weather-data__value" data-weather-type="windSpeed"></span>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+            <div id="loadingIndicator" class="loading-indicator" role="alert" aria-busy="true">
+                <svg class="loading-indicator__icon">
+                    <use href="./images/loading.svg#loading"></use>
+                </svg>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2025 Погода в Москве</p>
+            <a href="mailto:moscow.weather@example.com" class="footer__contact">Связаться с нами</a>
+        </footer>
+    </div>
+</body> 
+
+</html>
